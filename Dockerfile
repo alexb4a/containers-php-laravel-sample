@@ -28,7 +28,7 @@ RUN chown -R www-data:www-data /var/www/html
 RUN docker-php-ext-install mbstring
 
 # Expose port 80
-EXPOSE 80/tcp
+EXPOSE 443/tcp
 
 # Adjusting Apache configurations
 RUN a2enmod rewrite
