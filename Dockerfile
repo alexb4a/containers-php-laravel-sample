@@ -26,9 +26,11 @@ RUN composer install
 RUN chown -R www-data:www-data /var/www/html
 
 RUN docker-php-ext-install mbstring
+COPY .env.example .env
+RUN php artisan key:generate
 
 # Expose port 80
-EXPOSE 443/tcp
+EXPOSE 80/tcp
 
 # Adjusting Apache configurations
 RUN a2enmod rewrite
